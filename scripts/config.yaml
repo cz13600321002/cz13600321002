@@ -1,0 +1,75 @@
+# Google Drive 每日整理配置
+
+# 扫描范围：'root' 表示我的云端硬盘根目录，也可填写具体文件夹 ID
+scan_root: root
+
+# 扫描最近多少天内修改的文件（用于每日动态）
+recent_days: 1
+
+# 全量扫描用于重复检测（true = 每次都扫描全盘，false = 仅扫描 recent_days 内文件）
+full_scan_for_duplicates: true
+
+# 重复文件检测相似度阈值（0.0~1.0，建议 0.85）
+duplicate_threshold: 0.85
+
+# 日志保存路径（相对于仓库根目录）
+log_dir: 日志
+
+# Git 自动提交日志文件
+auto_git_commit: true
+
+# 文档分类规则（按顺序匹配，先匹配先生效）
+categories:
+  - name: 周报/月报
+    target_dir: 文档/报告
+    keywords: [周报, 月报, 周工作, 工作汇报]
+    mime_types: []
+
+  - name: 会议纪要
+    target_dir: 文档/会议纪要
+    keywords: [会议, 纪要, 议程, minutes, meeting]
+    mime_types: []
+
+  - name: 工作方案/计划
+    target_dir: 文档/方案
+    keywords: [方案, 计划, 预案, 规划, plan]
+    mime_types: []
+
+  - name: 合同协议
+    target_dir: 文档/合同
+    keywords: [合同, 协议, 协定, contract, agreement]
+    mime_types: []
+
+  - name: 电子表格
+    target_dir: 资料
+    keywords: []
+    mime_types:
+      - application/vnd.google-apps.spreadsheet
+      - application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+      - application/vnd.ms-excel
+
+  - name: 演示文稿
+    target_dir: 文档/方案
+    keywords: []
+    mime_types:
+      - application/vnd.google-apps.presentation
+      - application/vnd.openxmlformats-officedocument.presentationml.presentation
+
+  - name: 其他文档
+    target_dir: 文档
+    keywords: []
+    mime_types: []
+
+# MIME 类型中文名映射
+mime_type_names:
+  application/vnd.google-apps.document: Google 文档
+  application/vnd.google-apps.spreadsheet: Google 电子表格
+  application/vnd.google-apps.presentation: Google 演示文稿
+  application/vnd.google-apps.folder: 文件夹
+  application/pdf: PDF 文件
+  application/vnd.openxmlformats-officedocument.wordprocessingml.document: Word 文档
+  application/vnd.openxmlformats-officedocument.spreadsheetml.sheet: Excel 表格
+  application/vnd.openxmlformats-officedocument.presentationml.presentation: PPT 演示
+  image/jpeg: 图片
+  image/png: 图片
+  text/plain: 文本文件

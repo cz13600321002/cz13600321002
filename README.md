@@ -17,7 +17,9 @@
 │   ├── 周报/         # 周报模板
 │   ├── 月报/         # 月报模板
 │   ├── 项目计划/     # 项目计划模板
-│   └── 会议纪要/     # 会议纪要模板
+│   ├── 会议纪要/     # 会议纪要模板
+│   ├── 工作总结/     # 工作总结模板
+│   └── 工作方案/     # 工作方案模板
 ├── 项目/
 │   ├── 进行中/       # 当前进行中的项目
 │   ├── 待启动/       # 待启动项目
@@ -49,4 +51,41 @@
 
 ---
 
-*最后更新：2026-04-06*
+---
+
+## 自动化工具
+
+### Google Drive 每日整理脚本
+
+每天自动扫描 Google Drive，生成工作日志，保存至 `日志/` 目录。
+
+**首次设置：**
+
+```bash
+# 1. 安装依赖
+pip3 install -r scripts/requirements.txt
+
+# 2. 将 credentials.json 放到 scripts/ 目录，然后完成 OAuth2 授权
+python3 scripts/setup_auth.py
+
+# 3. 手动运行验证
+python3 scripts/daily_sync.py
+```
+
+**Cron 定时设置（每天 21:00 运行）：**
+
+```bash
+crontab -e
+# 添加以下行：
+# 0 21 * * * cd /home/user/cz13600321002 && python3 scripts/daily_sync.py >> /tmp/drive_sync.log 2>&1
+```
+
+**参数说明：**
+
+| 参数 | 说明 |
+|------|------|
+| `--days-back N` | 扫描过去 N 天（默认 1 天） |
+| `--dry-run` | 仅输出预览，不写文件 |
+| `--no-commit` | 写文件但不自动 git commit |
+
+*最后更新：2026-06-12*
