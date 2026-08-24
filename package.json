@@ -1,0 +1,12 @@
+{
+  "name": "work-docs-library",
+  "version": "1.0.0",
+  "private": true,
+  "description": "工作文库 —— 统一管理工作文档、模板、项目资料及归档内容",
+  "scripts": {
+    "docs": "docsify serve . --port 3000 --no-open"
+  },
+  "devDependencies": {
+    "docsify-cli": "^4.4.4"
+  }
+}

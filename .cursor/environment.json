@@ -1,0 +1,17 @@
+{
+  "name": "工作文库 Docs",
+  "install": "npm install",
+  "terminals": [
+    {
+      "name": "docsify",
+      "command": "npm run docs",
+      "description": "工作文库文档预览服务器（Docsify，支持热重载与全文搜索），访问 http://localhost:3000"
+    }
+  ],
+  "ports": [
+    {
+      "name": "docs",
+      "port": 3000
+    }
+  ]
+}
