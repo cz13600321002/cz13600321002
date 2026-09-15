@@ -17,11 +17,11 @@ Grok Bot 周额度按智能体步数和 token 计算，长任务和常驻 Routin
 
 ## 推荐开工顺序
 
-1. **工作文库智能维护**（本周试点，不走 Grok Bot 额度）
+1. **工作文库智能维护**（本周试点：Codex 或 Cursor Agent，不走 Grok Bot）
 2. **一条定时闭环**（周报草稿 / 资料入库 / 信息早报，三选一）
 3. **自建个人智能体网关**（确认要长期养助手后再做）
-4. Claude Cowork / ChatGPT Agent / Manus 仅作登录类任务的临时顶位
+4. Grok Bot 仅保留必须登录点选的任务；Cowork / Manus 只作临时顶位
 
 ## 当前结论
 
-Grok Bot 只干「没有它就得自己坐在电脑前点网页」的活。写材料、套模板、改本仓库走 Cursor Agent；问一句走普通对话；闹钟类先不要上 Routine。本周只试点一件：用仓库模板产出 1 份真实文档。
+日常默认走 Codex，它比 Grok Bot 耐用。Astra + Fast +「完全访问」会把这点优势吃掉，日常用 Sol/Terra、Fast 关掉、权限按次开。Grok Bot 只干必须点网页的活。本周试点：用仓库模板产出 1 份真实文档。
