@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jev-file"
+version = "0.1.0"
+description = "File work-library documents with one Jev decision call."
+requires-python = ">=3.10"
+dependencies = ["typesafe-sdk"]
+
+[project.scripts]
+jev-file = "jev_file.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
